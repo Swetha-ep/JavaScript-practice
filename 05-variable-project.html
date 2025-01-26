@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <title>Js variables</title>
+</head>
+<body>
+    <button onclick="console.log(`current cost=${cost}`);
+    ">
+        Current cost
+    </button>
+    <button onclick="cost++;console.log(`total=${cost}`);
+    ">
+        Add to cart
+    </button>
+    <button onclick="cost+=2; console.log(`total=${cost}`);
+    ">
+        +2
+    </button>
+    <button onclick="cost+=3; console.log(`total=${cost}`);
+    ">
+        +3
+    </button>
+    <button onclick="console.log('cart has been reset');cost=0;
+    console.log(`total=0`);
+    ">
+        Reset cart
+    </button>
+    <button onclick="cost-=1;console.log('1 item has been removed from the cart');
+    ; console.log(`total=${cost}`);
+    ">
+        Remove from cart
+    </button>
+    <!--end of cart project-->
+    <p>Calculator</p>
+    <p>
+            <button onclick="calculation+='1'; console.log(calculation);
+        ">
+            1
+        </button>
+        <button onclick="calculation+='2';console.log(calculation);
+        ">
+            2
+        </button>
+        <button onclick="calculation+='3';console.log(calculation);
+        ">
+            3
+        </button>
+    </p>
+    <p>
+        <button onclick="calculation+='4'; console.log(calculation);
+        ">
+            4
+        </button>
+        <button onclick="calculation+='5';console.log(calculation);
+        ">
+            5
+        </button>
+        <button onclick="calculation+='6';console.log(calculation);
+        ">
+            6
+        </button>
+    </p>
+    <p>
+        <button onclick="calculation+='7'; console.log(calculation);
+        ">
+            7
+        </button>
+        <button onclick="calculation+='8';console.log(calculation);
+        ">
+            8
+        </button>
+        <button onclick="calculation+='9';console.log(calculation);
+        ">
+            9
+        </button>
+    </p>
+    <p>
+        <button onclick="calculation+=' + '; console.log(calculation);
+        ">
+            +
+        </button>
+        <button onclick="calculation+=' - '; console.log(calculation);
+        ">
+            -
+        </button>
+        <button onclick="calculation+=' * '; console.log(calculation);
+        ">
+            *
+        </button>
+    </p>
+    <p>
+        <button onclick="calculation+=' / '; console.log(calculation);
+        ">
+            /
+        </button>
+        <button onclick="calculation=eval(calculation);console.log(calculation);calculation='';
+        ">
+            =
+        </button>
+        <button onclick="calculation+='.'; console.log(calculation);
+        ">
+            .
+        </button>
+    </p>
+        <button onclick="console.log('cleared'); calculation='';
+        ">
+            clear
+        </button>
+    <script>
+        let cost = 0;
+        let calculation='';
+    </script>
+</body>
+</html>
