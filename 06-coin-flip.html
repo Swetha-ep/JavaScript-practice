@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Js coin flip</title>
+</head>
+<body>
+    <script>
+         const randomNumber = Math.random()
+         
+        //  if (randomNumber < 0.5){
+        //     console.log('heads'); 
+        //  }else {
+        //     console.log('tails');
+        //  }
+
+         let result = randomNumber <0.5 ? 'heads' : 'tails'; //ternary operator '?'
+         const guess = 'tails';
+         console.log(`your guess : ${guess}`);
+         
+         console.log(`computer guessed : ${result}`);
+         
+        //  if (randomNumber === guess){
+        //     console.log('You win !');
+        //  } else {
+        //     console.log('You lose !');
+        //  }
+
+        let message = guess === result ? 'You win !' : 'You lose !';
+        console.log(message);
+        
+    </script>
+</body>
+</html>
