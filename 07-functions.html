@@ -42,6 +42,49 @@
             }
         }
         greet4();
+
+
+        function convertLength(length, from, to){
+
+            if (from==='km' && to==='miles'){
+                let result = (length/1.6) + ' '+to;
+                return result;
+            }
+            else if(from==='miles' && to==='km'){
+                //1 mile = 1.6km
+                let result = (length*1.6) + ' '+to;
+                return result;
+            }
+            else if (from==='miles' && to==='ft'){
+                //1 mile = 5280ft
+                let result = (length*5280)+' '+to;
+                return result;
+            }
+            else if(from==='km' && to==='ft'){
+                //1km = 3281 ft
+                let result = (length*3281)+' '+to;
+                return result;
+            }
+            else if (from==='ft' && to==='miles'){
+                let result = (length/5280)+' '+to;
+                return result;
+            }
+            else if(from==='ft' && to==='km'){
+                let result = (length/3281)+' '+to;
+                return result;
+            }
+            else{
+                let result = 'Invalid unit: '+to;
+                return result;
+            }
+        }
+        console.log(convertLength(50,'miles','km'));
+        console.log(convertLength(32,'km','miles'));
+        console.log(convertLength(5,'miles','km'));
+        console.log(convertLength(5,'miles','ft'));
+        console.log(convertLength(5,'km','ft'));
+        console.log(convertLength(5,'lbs','lbs'));
+
     </script>
 </body>
 </html>
