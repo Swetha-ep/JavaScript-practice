@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js</title>
+</head>
+<body>
+
+    <button onclick="updateCartQuantity('current-cost')">
+        Current cost
+    </button>
+
+    <button onclick="updateCartQuantity('add-to-cart');">
+        Add to cart
+    </button>
+
+    <button onclick="updateCartQuantity('+2');">
+        +2
+    </button>
+
+    <button onclick="updateCartQuantity('+3')">
+        +3
+    </button>
+
+    <button onclick="updateCartQuantity('reset-cart')">
+        Reset cart
+    </button>
+
+    <button onclick="updateCartQuantity('remove-from-cart')">
+        Remove from cart
+    </button>
+
+
+    <script>
+
+        let cost = 0;
+
+        function updateCartQuantity(action){
+
+            if (action==='current-cost'){
+
+                console.log(`current cost=${cost}`);
+            }
+             else if (action==='add-to-cart'){
+
+                if (cost > 10){
+                    alert('The cart id full !');
+                } else{
+                    cost++;
+                    console.log(`total=${cost}`);
+                }
+            } 
+            else if(action==='+2'){
+
+                if (cost > 10  || (cost + 2)>10 ){
+                    alert('The cart id full !')
+                } else{
+                    cost+=2;
+                    console.log(`total=${cost}`);
+                }
+            }
+            else if(action==='+3'){
+
+                if (cost > 10 || (cost + 3)>10 ){
+                    alert('The cart id full !')
+                } else{
+                    cost+=3;
+                    console.log(`total=${cost}`);
+                }
+            }
+            else if(action==='reset-cart'){
+
+                console.log('cart has been reset');
+                cost=0;
+                console.log(`total=0`);
+            }
+            else if(action==='remove-from-cart'){
+
+                if (cost <= 0){
+                    alert('Not enough items in the cart');
+                } else{
+                    cost-=1;
+                    console.log('1 item has been removed from the cart');
+                }
+                console.log(`total=${cost}`);
+            }
+        }
+    </script>
+</body>
+</html>
