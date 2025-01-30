@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js functions</title>
+</head>
+<body>
+    <script>
+        //eg-1
+        function greet(){
+            console.log("Hello!");
+        }
+        greet();
+
+        //eg-2
+        function greet1(name){
+            console.log(`Hello ${name}!`);
+        }
+        greet1('Swetha');
+
+        //eg-3
+        function greet2(name){
+            console.log(`Hello ${name}!`);
+        }
+        greet2();  //gives Hello undefined
+
+        //eg-4
+        function greet3(name='there'){
+            console.log(`Hello ${name}!`);
+        }
+        greet3();
+
+        //eg-5
+        function greet4(name){
+            if (!name){
+                console.log('Hello there!');
+                
+            } else {
+
+                console.log(`Hello ${name}!`);
+            }
+        }
+        greet4();
+    </script>
+</body>
+</html>
