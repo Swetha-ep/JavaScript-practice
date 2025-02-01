@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Calculator</p>
+    <p>
+        <button onclick="console.log(updateCalculation(1));">
+            1
+        </button>
+        <button onclick="console.log(updateCalculation(2));">
+            2
+        </button>
+        <button onclick="console.log(updateCalculation(3));">
+            3
+        </button>
+    </p>
+    <p>
+        <button onclick="console.log(updateCalculation(4));">
+            4
+        </button>
+        <button onclick="console.log(updateCalculation(5));">
+            5
+        </button>
+        <button onclick="console.log(updateCalculation(6));">
+            6
+        </button>
+    </p>
+    <p>
+        <button onclick="console.log(updateCalculation(7));">
+            7
+        </button>
+        <button onclick="console.log(updateCalculation(8));">
+            8
+        </button>
+        <button onclick="console.log(updateCalculation(9));">
+            9
+        </button>
+    </p>
+    <p>
+        <button onclick="console.log(updateCalculation('+'));">
+            +
+        </button>
+        <button onclick="console.log(updateCalculation('-'));">
+            -
+        </button>
+        <button onclick="console.log(updateCalculation('*'));">
+            *
+        </button>
+    </p>
+    <p>
+        <button onclick="console.log(updateCalculation('/'));">
+            /
+        </button>
+        <button onclick="calculation=eval(calculation);console.log(calculation);localStorage.setItem('calculation',calculation);
+        ">
+            =
+        </button>
+        <button onclick="console.log(updateCalculation('.'));">
+            .
+        </button>
+    </p>
+        <button onclick="console.log('cleared');calculation=''; localStorage.setItem('calculation',calculation);
+        ">
+            clear
+        </button>
+
+    <script>
+
+        let calculation = localStorage.getItem('calculation') || '';
+
+
+        function updateCalculation(num){
+            calculation+=`${num}`; 
+            localStorage.setItem('calculation',calculation);
+            return calculation;
+        }
+        
+    </script>
+</body>
+</html>
