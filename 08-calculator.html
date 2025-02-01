@@ -63,7 +63,10 @@
             .
         </button>
     </p>
-        <button onclick="console.log('cleared');calculation=''; localStorage.setItem('calculation',calculation);
+        <button onclick="console.log('cleared');
+        calculation=''; 
+        localStorage.setItem('calculation',calculation);
+        // localStorage.removeItem('calculation'); // this will only work if the page is refreshed after cleared.
         ">
             clear
         </button>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Js coin flip</title>
+</head>
+<body>
+
+    <button onclick="console.log(playGame('heads')); console.log(score);
+    ">
+        heads
+    </button>
+    <button onclick="console.log(playGame('tails')); console.log(score);
+    ">
+        tails
+    </button>
+    <button onclick="console.log('cleared');
+     score.wins=0;score.losses=0;localStorage.setItem('score',JSON.stringify(score));">
+        clear
+    </button>
+
+    <script>
+
+        const score = JSON.parse( localStorage.getItem('score')) ||  {
+            wins:0,
+            losses:0
+        };
+
+        
+        function resultScore (message){
+            if (message == 'You win !'){
+                score.wins ++;
+            } else {
+                score.losses ++;
+            }
+            localStorage.setItem('score',JSON.stringify(score));
+        };
+        
+        function playGame(guess){
+            
+            const randomNumber = Math.random();
+            let result = randomNumber < 0.5 ? 'heads' : 'tails';
+            let message = guess === result ? 'You win !' : 'You lose !';
+            resultScore(message);
+            return message;
+
+        };
+
+    </script>
+</body>
+</html>
