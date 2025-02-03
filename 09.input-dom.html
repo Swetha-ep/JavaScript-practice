@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js input</title>
+</head>
+<body>
+    <input type="text" class="js-input" placeholder="type something" onkeyup="show();">
+    <p class="js-text"></p>
+    <script>
+        function show(){
+            let textElement = document.querySelector('.js-input');
+            let paraElement = document.querySelector('.js-text');
+            paraElement.innerHTML = textElement.value;
+        }
+    </script>
+</body>
+</html>
