@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js DOM</title>
+</head>
+<body>
+
+    <button class="js-button-9a">9a</button>
+    <button class="js-button-second" onclick="isDone()">9b</button>
+
+    <button onclick="choice('heads')">heads</button>
+    <button onclick="choice('tails')">tails</button>
+    <p class="js-chose"></p>
+
+    <input type="text" class="js-input"
+     onkeydown="console.log(event.key);
+     handleKeydown(event);
+    ">
+    <button onclick="isName()">Submit</button>
+    <p class="js-name"></p>
+
+    <script>
+        console.log(document.querySelector('.js-button-9a').innerText);
+        function isDone()
+        {
+            let buttonElement = document.querySelector('.js-button-second');
+            if (buttonElement.innerHTML === '9b'){
+                buttonElement.innerHTML = '9b done!';
+            } else{
+                buttonElement.innerHTML = '9b';
+            }
+        }
+
+        function choice(choice){
+            let paraElement = document.querySelector('.js-chose');
+            paraElement.innerHTML = `You chose: ${choice}`;
+        };
+
+        function isName(){
+            let nameElement = document.querySelector('.js-input');
+            let pElement = document.querySelector('.js-name');
+            pElement.innerHTML = `Your name is: ${nameElement.value}`;
+        };
+
+        function handleKeydown(event){
+            if (event.key === 'Enter'){
+                isName();
+            }
+        }
+        
+    </script>
+</body>
+</html>
