@@ -4,35 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Html,css & js</title>
-    <style>
-        body{
-            margin-top: 10px;
-            margin-left: 10px;
-        }
-        .amazon-btn{
-            background-color: rgb(255, 216, 20);
-            border: none;
-            padding: 10px 75px;
-            font-size: 18px;
-            border-radius: 20px;
-            cursor: pointer;
-        }
-        .uber-btn{
-            background-color: black;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            font-weight: bold;
-        }
-        .uber-schedule-btn{
-            background-color: rgb(230, 230, 230);
-            border: none;
-            padding: 10px 25px;
-            font-weight: bold;
-            border-radius: 5px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles/10-hcj.css">
 </head>
 <body>
 
@@ -41,13 +13,12 @@
     <button class="uber-schedule-btn">Schedule for later</button>
 
     <button class="js-button">Test</button>
+    <p>ON and OFF :</p>
+    <button class="js-game-btn game-btn" onclick="isOn('js-game-btn');">Gaming</button>
+    <button class="js-game-btn1 game-btn" onclick="isOn('js-game-btn1');">Music</button>
+    <button class="js-game-btn2 game-btn" onclick="isOn('js-game-btn2');">Tech</button>
     
-    <script>
-        let btnElement = document.querySelector('.js-button');
-        console.log(btnElement);
-        console.log(btnElement.classList.contains('js-button'));
-        
-        
-    </script>
+    
+    <script src="scripts/10-hcj.js"></script>
 </body>
 </html>
