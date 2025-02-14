@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge excercises</title>
+    <link rel="stylesheet" href="styles/10-hcj.css">
+</head>
+<body>
+
+
+    <p>ON and OFF :</p>
+    <button class="js-game-btn game-btn" onclick="isOn('js-game-btn');">Gaming</button>
+    <button class="js-game-btn1 game-btn" onclick="isOn('js-game-btn1');">Music</button>
+    <button class="js-game-btn2 game-btn" onclick="isOn('js-game-btn2');">Tech</button>
+    
+    
+    <script>
+
+        function isOn(btn){
+            const btnElement = document.querySelector(`.${btn}`);
+            if (!btnElement.classList.contains('is-toggled')){
+                isOff();
+                btnElement.classList.add('is-toggled');
+            } else{
+                btnElement.classList.remove('is-toggled');
+            }
+        };
+
+        function isOff(){
+            const btnElement = document.querySelector('.is-toggled');
+            if (btnElement){
+                btnElement.classList.remove('is-toggled');
+            }
+        };
+
+    </script>
+</body>
+</html>
