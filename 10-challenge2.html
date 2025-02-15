@@ -43,6 +43,9 @@
             } else if (numElement < 0) {
                 pElement.classList.add('errormsg');
                 pElement.innerHTML = `Error: cost cannot be less than 0`;
+            } else{
+                pElement.classList.remove('errormsg');
+                pElement.innerHTML = `Your result is: ${numElement}`;
             }
         };
 
