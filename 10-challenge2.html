@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js DOM</title>
+    <style>
+        .search{
+            font-size: 19px;
+        }
+        .searchbtn{
+            background-color: green;
+            color: white;
+            border: none;
+            padding: 7px 20px;
+            cursor: pointer;
+        }
+        .errormsg{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <p>If cost is below 40, 10% tax is included.</p>
+    <input type="number" class="js-input search"
+    onkeydown="console.log(event.key);
+    handleKeydown(event);
+   ">
+   <button class="searchbtn" onclick="calculate()">Submit</button>
+   <p class="js-name"></p>
+
+
+    <script>
+
+        function calculate(){
+            let numElement = Number(document.querySelector('.js-input').value);
+            console.log(numElement);
+            let pElement = document.querySelector('.js-name');
+            if (numElement < 40 && numElement > 0){
+                numElement=numElement + 10;
+                pElement.classList.remove('errormsg');
+                pElement.innerHTML = `Your result is: ${numElement}`;
+            } else if (numElement < 0) {
+                pElement.classList.add('errormsg');
+                pElement.innerHTML = `Error: cost cannot be less than 0`;
+            }
+        };
+
+        function handleKeydown(event){
+            if (event.key === 'Enter'){
+                calculate();
+            }
+        };
+        
+    </script>
+</body>
+</html>
