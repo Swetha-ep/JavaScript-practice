@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/10-calculator.css">
+</head>
+<body>
+    <p class="js-result screen">  </p>
+    <p>
+        <button onclick="console.log(updateCalculation(1));" class="blackbtn">
+            1
+        </button>
+        <button onclick="console.log(updateCalculation(2));" class="blackbtn">
+            2
+        </button>
+        <button onclick="console.log(updateCalculation(3));" class="blackbtn">
+            3
+        </button>
+        <button onclick="console.log(updateCalculation('+'));" class="orangebtn">
+            +
+        </button>
+    </p>
+    <p>
+        <button onclick="console.log(updateCalculation(4));" class="blackbtn">
+            4
+        </button>
+        <button onclick="console.log(updateCalculation(5));" class="blackbtn">
+            5
+        </button>
+        <button onclick="console.log(updateCalculation(6));" class="blackbtn">
+            6
+        </button>
+        <button onclick="console.log(updateCalculation('-'));" class="orangebtn">
+            -
+        </button>
+    </p>
+    <p>
+        <button onclick="console.log(updateCalculation(7));" class="blackbtn">
+            7
+        </button>
+        <button onclick="console.log(updateCalculation(8));" class="blackbtn">
+            8
+        </button>
+        <button onclick="console.log(updateCalculation(9));" class="blackbtn">
+            9
+        </button>
+        <button onclick="console.log(updateCalculation('*'));" class="orangebtn">
+            *
+        </button>
+    </p>
+    <p>
+        <button onclick="console.log(updateCalculation(0));" class="blackbtn">
+            0
+        </button>
+        <button onclick="calculation=eval(calculation);showResult(calculation);console.log(calculation);localStorage.setItem('calculation',calculation);
+        " class="blackbtn">
+            =
+        </button>
+        <button onclick="console.log(updateCalculation('.'));" class="blackbtn">
+            .
+        </button>
+        <button onclick="console.log(updateCalculation('/'));" class="orangebtn">
+            /
+        </button>
+    </p>
+    <button onclick="console.log('cleared');
+    calculation=''; showResult(calculation);
+    localStorage.setItem('calculation',calculation);
+    // localStorage.removeItem('calculation'); // this will only work if the page is refreshed after cleared.
+    " class="blackbtn">
+        clear
+    </button>
+    
+    <script src="scripts/10-calculator.js"></script>
+    
+</body>
+</html>

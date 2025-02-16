@@ -1,0 +1,19 @@
+.blackbtn{
+    background-color: grey;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 25px;
+    color: white;
+    font-size: 18px;
+}
+.orangebtn{
+    background-color: orange;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 25px;
+    color: white;
+    font-size: 18px;
+}
+.screen{
+    font-size: 20px;
+}
