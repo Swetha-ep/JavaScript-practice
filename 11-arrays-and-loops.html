@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays and loops in Js</title>
+</head>
+<body>
+    
+
+    <script>
+
+        const nums = [10,20,30];
+        nums[2] = 99;
+        console.log(nums);
+        console.log(getLastValue([1,20,22,24,5]));
+        console.log(getLastValue(['hi','hello','good']));
+
+        function getLastValue(array){
+            return array[array.length-1];
+        }
+
+        console.log(arraySwap([1,20,22,24,5]));
+        console.log(arraySwap(['good','hello','hi']));
+        
+        function arraySwap(array){
+            let first = array[0];
+            let last = array[array.length-1];
+            array[0] = last;
+            array[array.length-1] = first;
+            return array;
+        }
+    </script>
+</body>
+</html>
