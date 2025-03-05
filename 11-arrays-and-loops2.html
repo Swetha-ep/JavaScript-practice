@@ -79,9 +79,46 @@
         
         
 
+        for (let i=1;i<21;i++){
+            if (i%3===0){
+                console.log({i},'Fizz');
+            }else if(i%5===0){
+                console.log({i},'Buzz');
+            }else if(i%3===0 && i%5===0){
+                console.log({i},'FizzBuzz');
+            }else{
+                console.log({i});   
+            }
+        }
 
+        function findIndex(array1,word){
+            for(let j=0;j<array1.length;j++){
+                if (array1[j]===word){
+                    return j;
+                }
+            }
+            return -1
+        }
 
+        console.log(findIndex(['green','red','blue','red'],'red'));
+        console.log(findIndex(['green','red','blue','red'],'yellow'));
 
+        function unique(array3){
+            const result = [];
+            for(let i=0;i<array3.length;i++){
+                let index = findIndex(result,array3[i]);
+                if (index === -1){
+                    result.push(array3[i]);
+                }
+            }
+            return result;
+        }
+
+        console.log(unique(['green','red','blue','red']));
+        console.log(unique(['red','green','green','red']));
+        
+        
+        
     </script>
 </body>
 </html>
