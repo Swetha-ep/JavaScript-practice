@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Functions</title>
+</head>
+<body>
+    <button class="js-finish-btn" onclick="changebtn();">Start</button>
+    <button class="js-second-btn" onclick="updateSecond();">Start</button>
+    <button onclick="displayMsg();">Add to cart</button>
+    <p class="js-text"></p>
+    <script>
+        //Hoisting - we can call it wherever we want. order doesnt matter.
+        //Functions which are defined as doesnot support hoisting
+        const add = function (){
+            console.log(2+3);
+        }
+        add();
+        add();
+
+        function runTwice(fun){ 
+            fun();
+            fun();
+        }
+
+
+        //call a function inside a function is called callback functions
+        runTwice(function(){
+            console.log('12b');
+        })
+
+        runTwice(add);
+
+
+        function changebtn(){
+            setTimeout(function(){
+                const btnElement = document.querySelector('.js-finish-btn');
+                btnElement.innerText = 'Finished!';
+            },1000);
+        }
+
+        function updateSecond(){
+            const btnElement = document.querySelector('.js-second-btn');
+            btnElement.innerHTML = 'Loading....';
+            setTimeout(function(){
+                btnElement.innerHTML = 'Finished!';
+            },1000);
+        }
+        
+
+        function displayMsg(){
+            const textElement = document.querySelector('.js-text');
+            textElement.innerHTML = 'Added!';
+            setTimeout(function(){
+                textElement.innerHTML='';
+            },2000);
+        }
+
+    </script>
+</body>
+</html>
