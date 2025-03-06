@@ -10,6 +10,13 @@
     <button class="js-second-btn" onclick="updateSecond();">Start</button>
     <button onclick="displayMsg();">Add to cart</button>
     <p class="js-text"></p>
+
+    <button onclick="display();">Add to Cart</button>
+    <p class="js-second-text"></p>
+
+    <button onclick="messages++;">Add</button>
+    <button onclick="messages--;">remove</button>
+
     <script>
         //Hoisting - we can call it wherever we want. order doesnt matter.
         //Functions which are defined as doesnot support hoisting
@@ -56,6 +63,34 @@
                 textElement.innerHTML='';
             },2000);
         }
+
+        let timeoutId;
+
+        function display(){
+            const textElement = document.querySelector('.js-second-text');
+            textElement.innerHTML = 'Added!';
+
+            clearTimeout(timeoutId);
+
+            timeoutId = setTimeout(function(){
+                textElement.innerHTML = '';
+            },2000);
+        }
+        
+        let messages = 2;
+        setInterval(function(){
+            if (messages === 0){
+                document.title = 'App';
+            }else if (messages > 0){
+                if (document.title === 'App'){
+                document.title = `(${messages}) New Messages`;
+                } else{
+                document.title = 'App';
+                }
+            }
+        },1000);
+        
+
 
     </script>
 </body>
