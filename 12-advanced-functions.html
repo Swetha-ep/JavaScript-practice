@@ -6,9 +6,9 @@
     <title>Advanced Functions</title>
 </head>
 <body>
-    <button class="js-finish-btn" onclick="changebtn();">Start</button>
-    <button class="js-second-btn" onclick="updateSecond();">Start</button>
-    <button onclick="displayMsg();">Add to cart</button>
+    <button class="js-finish-btn js-fst-start">Start</button>
+    <button class="js-second-btn js-scnd-start">Start</button>
+    <button  class="js-fst-cart">Add to cart</button>
     <p class="js-text"></p>
 
     <button onclick="display();">Add to Cart</button>
@@ -33,33 +33,45 @@
 
 
         //call a function inside a function is called callback functions
-        runTwice(function(){
+        runTwice(()=>{
             console.log('12b');
         })
 
         runTwice(add);
 
+        document.querySelector('.js-fst-start').addEventListener('click',()=>{
+            changebtn();
+        });
 
         function changebtn(){
-            setTimeout(function(){
+            setTimeout(()=>{
                 const btnElement = document.querySelector('.js-finish-btn');
                 btnElement.innerText = 'Finished!';
             },1000);
         }
 
+
+        document.querySelector('.js-scnd-start').addEventListener('click',()=>{
+            updateSecond();
+        });
+
         function updateSecond(){
             const btnElement = document.querySelector('.js-second-btn');
             btnElement.innerHTML = 'Loading....';
-            setTimeout(function(){
+            setTimeout(()=>{
                 btnElement.innerHTML = 'Finished!';
             },1000);
         }
         
 
+        document.querySelector('.js-fst-cart').addEventListener('click', ()=>{
+            displayMsg();
+        });
+
         function displayMsg(){
             const textElement = document.querySelector('.js-text');
             textElement.innerHTML = 'Added!';
-            setTimeout(function(){
+            setTimeout(()=> {
                 textElement.innerHTML='';
             },2000);
         }
@@ -72,13 +84,13 @@
 
             clearTimeout(timeoutId);
 
-            timeoutId = setTimeout(function(){
+            timeoutId = setTimeout(()=>{
                 textElement.innerHTML = '';
             },2000);
         }
         
         let messages = 2;
-        setInterval(function(){
+        setInterval(() => {
             if (messages === 0){
                 document.title = 'App';
             }else if (messages > 0){
