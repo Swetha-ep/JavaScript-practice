@@ -50,3 +50,18 @@ body{
 .result img{
     width: 40px;
 }
+
+.confirm-btn{
+    padding: 3px 5px;
+    background-color: black;
+    border-color: white;
+    color: white;
+    border: solid;
+    border-width: 1px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.confirm-btn:hover{
+    background-color: grey;
+}
