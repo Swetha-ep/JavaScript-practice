@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced functions 2</title>
+</head>
+<body>
+    
+    <script>
+
+        const multiply = (a,b) => {
+            return a*b;
+        };
+        console.log(multiply(2,3));
+        console.log(multiply(7,10));
+
+
+        const multiply1 = (a,b) => a * b;
+        console.log(multiply1(2,3));
+         
+        //if only 1 parameter, we can skip parentheses like =(nums)=>
+        const countPositive = nums => {
+            count = 0;
+            nums.forEach((value)=>{
+                if (value > 0){
+                    count++;
+                }
+            });
+            return count;
+        }
+
+        console.log(countPositive([1,-3,5]));
+        console.log(countPositive([-2,3,-5,7,10]));
+        
+
+        function addNum(array,num){
+            return array.map((value)=> value + num);
+            // const result = array.map((value) => {return value + num});
+            // console.log(result);
+            
+        }
+
+        console.log(addNum([1,2,3],2));
+        console.log(addNum([-2,-1,0,99],2));
+        // addNum([1,2,3],2);
+        // addNum([-2,-1,0,99],2);
+
+
+        function removeEggs(foods){
+            // return foods.filter((value)=>{
+            //     if (value !== 'egg'){
+            //         return true;
+            //     }
+            // });
+            return foods.filter((value) => value !== 'egg');
+        }
+
+        console.log(removeEggs(['egg','apple','egg','egg','ham']));
+        
+        
+        function removeFstEggs(foods){
+            count = 0;
+            return foods.filter((value) => {
+                if (value === 'egg' && count <2){
+                    count++;
+                    return false;
+                }
+                return true;
+            });
+        }
+
+        console.log(removeFstEggs(['egg','apple','egg','egg','ham']));
+
+    </script>
+</body>
+</html>
