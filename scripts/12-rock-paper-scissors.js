@@ -17,6 +17,29 @@ document.querySelector('.js-scissors-btn').addEventListener('click',()=>{
     playGame('scissors');
 });
 
+let isAutoplaying = false;
+let intervalId;
+
+document.querySelector('.js-autoplay').addEventListener('click',()=>{
+    autoPlay();
+});
+
+
+function autoPlay(){
+    if (!isAutoplaying){
+        intervalId = setInterval(()=>{
+            const playerMove = computerPlay();
+            playGame(playerMove);
+        },1000);
+        isAutoplaying = true;
+        document.querySelector('.js-autoplay').innerHTML = 'Stop playing';
+    }else{
+        clearInterval(intervalId);
+        isAutoplaying = false;
+        document.querySelector('.js-autoplay').innerHTML = 'Auto Play';
+    }
+}
+
 
 function playGame(playerMove){
     const computerMove = computerPlay();

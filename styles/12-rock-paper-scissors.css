@@ -2,13 +2,22 @@ body{
     background-color: black;
     color: white;
     padding: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 100vh;
+    overflow: hidden;
 }
 
 .icons-bar{
+    margin-top: 30px;
     display: flex;
     justify-content: center;
     gap: 30px;
 }
+
 
 .icons{
     border: solid;
